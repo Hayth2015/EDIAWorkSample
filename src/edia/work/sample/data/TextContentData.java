@@ -18,30 +18,30 @@ public class TextContentData {
 	static {
 
 
-		PostgresHelper client = new PostgresHelper(
-				DbContract.HOST,
-				DbContract.DB_NAME,
-				DbContract.USERNAME,
-				DbContract.PASSWORD);
-		try {
-			if (client.connect()) {
-				System.out.println("DB connected");
-
-				ResultSet rs = client.execQuery("SELECT * FROM textcontent");
-				while(rs.next()) {
-					//			    System.out.printf("%s\t%d\t%s\t%d\t%s\n",
-					//			            rs.getString(1),
-					//			            rs.getString(2),
-					//			            rs.getString(3),
-					//			            rs.getInt(4));
-					texts.add(new TextContent(rs.getString(2), rs.getDate(3), rs.getString(4), rs.getDate(5), rs.getString(6)));
-
-				}
-			}
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
-
+//		PostgresHelper client = new PostgresHelper(
+//				DbContract.HOST,
+//				DbContract.DB_NAME,
+//				DbContract.USERNAME,
+//				DbContract.PASSWORD);
+//		try {
+//			if (client.connect()) {
+//				System.out.println("DB connected");
+//
+//				ResultSet rs = client.execQuery("SELECT * FROM textcontent");
+//				while(rs.next()) {
+//					//			    System.out.printf("%s\t%d\t%s\t%d\t%s\n",
+//					//			            rs.getString(1),
+//					//			            rs.getString(2),
+//					//			            rs.getString(3),
+//					//			            rs.getInt(4));
+//					texts.add(new TextContent(rs.getString(2), rs.getDate(3), rs.getString(4), rs.getDate(5), rs.getString(6)));
+//
+//				}
+//			}
+//		} catch (ClassNotFoundException | SQLException e) {
+//			e.printStackTrace();
+//		}
+//
 
 
 		//TODO Retrieve data from database
