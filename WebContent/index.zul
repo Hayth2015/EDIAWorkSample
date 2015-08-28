@@ -1,0 +1,46 @@
+<?page title="Auto Generated index.zul"?>
+<window title="EDIA Work Sample" border="normal" width="200px">
+
+	<div apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('edia.work.sample.data_filter.FilterViewModel')">
+		<style src="/widgets/grid/data_filter/style.css" />
+		<grid model="@load(vm.textContentModel)">
+			<auxhead sclass="category-center">
+				<auxheader label="My texts" colspan="6" />
+			</auxhead>
+			<auxhead sclass="category-center">
+				<auxheader colspan="1">
+					<image src="/img/funnel-icon.png" />
+					<textbox instant="true" width="100px"
+						value="@bind(vm.textContentFilter.title)"
+						onChange="@command('changeFilter')" />
+				</auxheader>
+			</auxhead>
+			<columns>
+				<column hflex="2">Title</column>
+			</columns>
+			<template name="model">
+				<row>
+					<label value="@load(each.title)" />
+				</row>
+			</template>
+			<foot>
+				<footer span="6" class="footer_right"
+					label="@load(vm.footer)" />
+			</foot>
+		</grid>
+
+	</div>
+	<div>
+		<grid>
+			<rows>
+				<row>
+					<button id="addButton" label="Add" />
+				</row>
+			</rows>
+		</grid>
+	</div>
+
+	<!-- <label value="You are using: ${desktop.webApp.version}"/> -->
+
+</window>
